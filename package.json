@@ -1,16 +1,11 @@
 {
   "name": "ngl-bot",
   "version": "1.0.0",
-  "description": "Configurable NGL message bot",
   "main": "ngl-bot.js",
   "scripts": {
-    "start": "node ngl-bot.js",
-    "dev": "node ngl-bot.js"
+    "start": "node ngl-bot.js"
   },
   "dependencies": {
-    "puppeteer": "^21.0.0"
-  },
-  "keywords": ["ngl", "bot", "automation"],
-  "author": "",
-  "license": "MIT"
+    "puppeteer": "^22.0.0"
+  }
 }
