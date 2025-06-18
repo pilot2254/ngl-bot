@@ -1,0 +1,15 @@
+{
+  "url": "https://ngl.link/pilot2254.private",
+  "messages": [
+    "Hello there!",
+    "How are you doing today?",
+    "Hope you have a great day!",
+    "Sending positive vibes your way",
+    "Just wanted to say hi!"
+  ],
+  "mode": "random",
+  "delay": 3000,
+  "headless": true,
+  "timeout": 30000,
+  "retries": 3
+}
