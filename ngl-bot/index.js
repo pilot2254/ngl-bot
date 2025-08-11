@@ -12,7 +12,7 @@ async function sendMessage(message) {
 
   await page.click('button[type="submit"]');
 
-  console.log(`Odoslaná správa: ${message}`);
+  console.log(`Message Sent: ${message}`);
 
   await new Promise(resolve => setTimeout(resolve, 1000));
 
