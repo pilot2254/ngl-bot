@@ -2,6 +2,9 @@
 
 A simple JavaScript bot that automatically sends multiple messages via NGL.link.
 
+> [!IMPORTANT]
+> I only made this for educational purposes. It was not built to cyberbully someone or spam NGL's servers with requests.
+
 ## Configuration
 
 Edit `config.json` to customize the bot behavior:
