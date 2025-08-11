@@ -1,14 +1,22 @@
 {
-  "name": "meowcica",
+  "name": "ngl-bot",
   "version": "1.0.0",
+  "description": "A simple JavaScript bot that automatically sends multiple messages via NGL.link.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["bot", "automation", "ngl-link"],
+  "author": "StromVMX",
+  "license": "MIT",
+  "homepage": "https://github.com/StromVMX/ngl-bot",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StromVMX/ngl-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/StromVMX/ngl-bot/issues"
+  },
   "dependencies": {
     "puppeteer": "^24.10.1"
   }
