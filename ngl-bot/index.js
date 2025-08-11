@@ -24,17 +24,8 @@ async function loadMessages() {
   }
 }
 
-function shuffleArray(array) {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
-
 async function sendMessage(message, config) {
-  const browser = await puppeteer.launch({ headless: config.headless });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
   try {
@@ -58,7 +49,7 @@ async function sendMessage(message, config) {
   console.log('Starting NGL Bot...');
   
   const config = await loadConfig();
-  let messages = await loadMessages();
+  const messages = await loadMessages();
 
   if (messages.length === 0) {
     console.error('No messages found in messages.json');
@@ -68,35 +59,18 @@ async function sendMessage(message, config) {
   console.log(`Loaded ${messages.length} messages`);
   console.log(`Target URL: ${config.nglUrl}`);
   console.log(`Delay between messages: ${config.delayBetweenMessages}ms`);
-  console.log(`Max cycles: ${config.maxCycles === 0 ? 'Infinite' : config.maxCycles}`);
 
-  if (config.randomizeOrder) {
-    messages = shuffleArray(messages);
-    console.log('Messages will be sent in random order');
-  }
-
-  let cycleCount = 0;
   let messageIndex = 0;
 
-  while (config.maxCycles === 0 || cycleCount < config.maxCycles) {
+  while (true) {
     await sendMessage(messages[messageIndex], config);
 
     messageIndex++;
     if (messageIndex >= messages.length) {
       messageIndex = 0;
-      cycleCount++;
-      
-      if (config.randomizeOrder) {
-        messages = shuffleArray(messages);
-      }
-      
-      console.log(`Completed cycle ${cycleCount}`);
+      console.log('Completed cycle, restarting...');
     }
 
-    if (config.maxCycles === 0 || cycleCount < config.maxCycles) {
-      await new Promise(resolve => setTimeout(resolve, config.delayBetweenMessages));
-    }
+    await new Promise(resolve => setTimeout(resolve, config.delayBetweenMessages));
   }
-
-  console.log('Bot finished running');
 })();
