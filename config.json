@@ -1,0 +1,8 @@
+{
+  "nglUrl": "https://ngl.link/pilot2254.private",
+  "delayBetweenMessages": 2000,
+  "delayAfterSend": 1000,
+  "headless": false,
+  "randomizeOrder": false,
+  "maxCycles": 0
+}
