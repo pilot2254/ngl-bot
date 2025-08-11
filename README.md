@@ -18,6 +18,9 @@ Edit `messages.json` to customize the messages that will be sent. The bot will c
 
 ```bash
 node ./ngl-bot/index.js
+
+# Or you can use
+npm run dev
 ```
 
 ## Requirements

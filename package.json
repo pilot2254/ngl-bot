@@ -4,7 +4,8 @@
   "description": "A simple JavaScript bot that automatically sends multiple messages via NGL.link.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ./ngl-bot/index.js"
   },
   "keywords": ["bot", "automation", "ngl-link"],
   "author": "StromVMX",
